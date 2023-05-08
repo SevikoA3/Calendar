@@ -1,7 +1,36 @@
-h1 {
-    font: bold;
+body{
+    margin: 0;
 }
-.test {
-    background-color: lightgrey;
-    font-size: 30px;
+.login-page{
+    margin: 0;
+    background: linear-gradient(300deg, rgba(48,40,184,1) 0%, rgba(0,213,255,1) 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+}
+.login-container{
+    height: 600px;
+    width: 1000px;
+    border-radius: 20px;
+    background-image: url("assets/background.svg");
+    background-size: cover;
+    /* overflow-x: hidden; */
+    display: flex;
+}
+.register{
+    width: 0px;
+    height: 100%;
+    background: white;
+
+}
+.center{
+    width: 600px;
+    height: 100%;
+}
+.login{
+    width: 400px;
+    height: 100%;
+    background: white;
 }
