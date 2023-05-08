@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hello World</title>
     <link rel="stylesheet" href="new.css">
-    <script src="testing.js">
+    <script src="testing.js"></script>
 </head>
 <body>
     <div class="test">
