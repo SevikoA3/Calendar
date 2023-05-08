@@ -8,7 +8,9 @@
     <link rel="stylesheet" href="new.css">
 </head>
 <body>
-    <h1>Hello World!!!</h1>
-    <p>tolol</p>
+    <div class="test">
+        <h1>Hello World!!!</h1>
+        <p>tolol</p>
+    </div>
 </body>
 </html>
