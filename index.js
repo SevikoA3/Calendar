@@ -1,19 +1,22 @@
-
+const quote = document.querySelector("#quote")
 const subPage = document.querySelectorAll(".sub-page")
-let counter = 0
+let counter = true
 
 function slide() {
-    counter++
-    if (counter % 2 == 0){
-        subPage[0].style.transform = "translateX(-101%)"
+    if (counter){
+        subPage[0].style.transform = "translateX(-100%)"
         subPage[1].style.transform = "translateX(0%)"
         subPage[2].style.transform = "translateX(0%)"
-        document.getElementById("quote").innerHTML = "With Tense-Fi, productivity becomes a necessity."
+        quote.innerHTML = "With Tense-Fi, productivity becomes a necessity."
+        quote.style.fontSize = "2rem"
+        counter = false
     }
     else {
         subPage[0].style.transform = "translateX(0%)"
-        subPage[1].style.transform = "translateX(46%)"
-        subPage[2].style.transform = "translateX(101%)"
-        document.getElementById("quote").innerHTML = "You are welcomed to start your daily journey with Tense-Fi."
+        subPage[1].style.transform = "translateX(42.85%)"
+        subPage[2].style.transform = "translateX(100%)"
+        quote.innerHTML = "You are welcomed to start your daily journey with Tense-Fi."
+        quote.style.fontSize = "1.6rem"
+        counter = true
     }
 }

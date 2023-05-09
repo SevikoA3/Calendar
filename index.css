@@ -31,8 +31,8 @@ body{
 }
 
 #center{
-    width: 70vw;
-    height: 100vh;
+    width: 70%;
+    height: 100%;
     /* background-color: rgba(137, 43, 226, 0.238); */
     transform: translateX(0%);
     transition: ease-out 1s;
@@ -58,8 +58,8 @@ body{
 }
 
 #register{
-    width: 30vw;
-    height: 100vh;
+    width: 30%;
+    height: 100%;
     background: rgb(255, 255, 255);
     position: absolute;
     transform: translateX(-100%);
@@ -72,8 +72,8 @@ body{
 }
 
 #login{
-    width: 30vw;
-    height: 100vh;
+    width: 30%;
+    height: 100%;
     background: rgb(255, 255, 255);
     transform: translateX(0%);
     transition: ease-out 1s;
@@ -91,7 +91,9 @@ body{
 }
 
 .uname {
-    border-radius: 2vw;
+    height: 15%;
+    width: 100%;
+    border-radius: 20px;
     margin-top: 3vh;
     margin-inline: auto;
     display: flex;
@@ -102,7 +104,9 @@ body{
 }
 
 .pass {
-    border-radius: 2vw;
+    height: 15%;
+    width: 100%;
+    border-radius: 20px;
     margin-top: 1vw;
     margin-inline: auto;
     display: flex;
