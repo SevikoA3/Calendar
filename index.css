@@ -15,7 +15,7 @@ body{
     height: 600px;
     max-width: 1000px; 
     border-radius: 20px;
-    background-image: url("asset/background.svg");
+    background-image: url("assets/background.svg");
     background-size: cover;
     display: flex;
     flex-shrink: 0;
