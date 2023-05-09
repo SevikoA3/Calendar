@@ -1,6 +1,6 @@
 const quote = document.querySelector("#quote")
 const subPage = document.querySelectorAll(".sub-page")
-let counter = true
+let change = true
 
 function slide() {
     if (counter){
@@ -9,7 +9,7 @@ function slide() {
         subPage[2].style.transform = "translateX(0%)"
         quote.innerHTML = "With Tense-Fi, productivity becomes a necessity."
         quote.style.fontSize = "2rem"
-        counter = false
+        change = false
     }
     else {
         subPage[0].style.transform = "translateX(0%)"
@@ -17,6 +17,6 @@ function slide() {
         subPage[2].style.transform = "translateX(100%)"
         quote.innerHTML = "You are welcomed to start your daily journey with Tense-Fi."
         quote.style.fontSize = "1.6rem"
-        counter = true
+        change = true
     }
 }
