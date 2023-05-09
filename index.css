@@ -14,9 +14,9 @@ body{
     height: 100vh;
 }
 .login-container{
-    height: 38rem;
-    width: 86rem;
-    border-radius: 20px;
+    height: 38vw;
+    width: 86vw;
+    border-radius: 2vw;
     background-image: url("assets/background.svg");
     background-size: cover;
     /* overflow-x: hidden; */
@@ -29,41 +29,81 @@ body{
 
 }
 .center{
-    width: 75rem;
+    width: 75vw;
     height: 100%;
 }
 .login{
-    width: 25rem;
+    width: 25vw;
     height: 100%;
-    border-top-right-radius: 20px;
-    border-bottom-right-radius: 20px;
+    border-top-right-radius: 2vw;
+    border-bottom-right-radius: 2vw;
     background: white;
                                                 
 }
 
 .login > p {
-    padding-top: 8rem;
+    padding-top: 8vw;
     margin: auto;
     text-align: center;
     font-weight: 500;
-    font-size: 3rem;
+    font-size: 3vw;
 }
 
 .center .p1 {
     font-weight: 100;
-    font-size: 6rem;
+    font-size: 6vw;
     color: white;
     margin: auto;
     text-align: center;
-    padding-top: 8rem;
+    padding-top: 8vw;
 }
 
 .center .p2 {
     font-weight: 100;
-    font-size: 2rem;
+    font-size: 2vw;
     color: white;
     margin: auto;
     text-align: center;
-    padding-top: 2rem;
-    letter-spacing: 5px;
+    padding-top: 2vw;
+    letter-spacing: 0.5vw;
+}
+
+.login > form .uname {
+    border-radius: 2vw;
+    margin-top: 3vw;
+    margin-inline: auto;
+    display: flex;
+    text-align: center;
+    font-family: 'Futura PT', sans-serif;
+    font-size: 1.5vw;
+}
+
+.login > form .pass {
+    border-radius: 2vw;
+    margin-top: 1vw;
+    margin-inline: auto;
+    display: flex;
+    text-align: center;
+    font-family: 'Futura PT', sans-serif;
+    font-size: 1.5vw;
+}
+
+.login > form .submitButton {
+    font-family: 'Futura PT', sans-serif;
+    border-radius: 0.7vw;
+    margin-top: 4vw;
+    height: 2.5vw;
+    margin-inline: auto;
+    text-align: center;
+    display: block;
+    border: none;
+    width: 10vw;
+    font-size: 1.5vw;
+    background-color: #AF6B58;
+    color: white;
+}
+
+.login > form .submitButton:hover {
+    color: black;
+    background-color: whitesmoke;
 }
