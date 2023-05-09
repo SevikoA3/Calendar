@@ -37,8 +37,7 @@ body{
     height: 100%;
     border-top-right-radius: 2vw;
     border-bottom-right-radius: 2vw;
-    background: white;
-                                                
+    background: white;                                   
 }
 
 .login > p {
@@ -76,6 +75,7 @@ body{
     text-align: center;
     font-family: 'Futura PT', sans-serif;
     font-size: 1.5vw;
+    border: 2.5px solid grey;
 }
 
 .login > form .pass {
@@ -86,12 +86,13 @@ body{
     text-align: center;
     font-family: 'Futura PT', sans-serif;
     font-size: 1.5vw;
+    border: 2.5px solid grey;
 }
 
 .login > form .submitButton {
     font-family: 'Futura PT', sans-serif;
     border-radius: 0.7vw;
-    margin-top: 4vw;
+    margin-top: 2vw;
     height: 2.5vw;
     margin-inline: auto;
     text-align: center;
@@ -107,3 +108,19 @@ body{
     color: black;
     background-color: whitesmoke;
 }
+
+.login > form .divider {
+    margin-inline: auto;
+    margin-top: 2vw;
+    width: 80%;
+    height: 2px;
+    background-color: grey;
+}
+/* 
+.login > form .divider > div {
+    margin-inline: auto;
+    margin-top: 2vw;
+    width: 80%;
+    height: 2px;
+    background-color: grey;
+} */
