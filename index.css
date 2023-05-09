@@ -11,8 +11,8 @@ body{
     height: 100vh;
 }
 .login-container{
-    height: 600px;
-    width: 1000px;
+    height: 38rem;
+    width: 86rem;
     border-radius: 20px;
     background-image: url("assets/background.svg");
     background-size: cover;
@@ -26,11 +26,13 @@ body{
 
 }
 .center{
-    width: 600px;
+    width: 75rem;
     height: 100%;
 }
 .login{
-    width: 400px;
+    width: 25rem;
     height: 100%;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
     background: white;
 }
