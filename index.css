@@ -1,0 +1,148 @@
+@import url('https://fonts.cdnfonts.com/css/futura-pt');
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: 'Futura PT', sans-serif;
+}
+.login-page{
+    margin: 0;
+    background: linear-gradient(300deg, rgba(48,40,184,1) 0%, rgba(0,213,255,1) 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+}
+.login-container{
+    height: 85vh;
+    max-width: 90vw; 
+    border-radius: 20px;
+    background-image: url("assets/background.svg");
+    background-size: cover;
+    display: flex;
+    flex-shrink: 0;
+    flex-grow: 1;
+    overflow: hidden;
+    position: relative;
+}
+
+#center{
+    width: 70vw;
+    height: 100vh;
+    /* background-color: rgba(137, 43, 226, 0.238); */
+    transform: translateX(0%);
+    transition: ease-out 1s;
+    /* display: flex;
+    flex-direction: column; */
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+
+#greetings {
+    padding-top: 20vh;
+    font-size: 5rem;
+    font-weight: 100;
+}
+
+#quote {
+    padding-top: 5vh;
+    font-size: 2rem;
+    font-weight: 100;
+    letter-spacing: 0.3vw;
+}
+
+#register{
+    width: 30vw;
+    height: 100vh;
+    background: rgb(255, 255, 255);
+    position: absolute;
+    transform: translateX(-100%);
+    transition: ease-out 1s;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    padding-top:20vh;
+    align-items: center;
+}
+
+#login{
+    width: 30vw;
+    height: 100vh;
+    background: rgb(255, 255, 255);
+    transform: translateX(0%);
+    transition: ease-out 1s;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    padding-top:20vh;
+    align-items: center;
+}
+
+.sub-header {
+    font-weight: 500;
+    font-size: 3vw;
+    padding-bottom: 5vh;
+}
+
+.uname {
+    border-radius: 2vw;
+    margin-top: 3vh;
+    margin-inline: auto;
+    display: flex;
+    text-align: center;
+    font-family: 'Futura PT', sans-serif;
+    font-size: 1.5vw;
+    border: 2.5px solid grey;
+}
+
+.pass {
+    border-radius: 2vw;
+    margin-top: 1vw;
+    margin-inline: auto;
+    display: flex;
+    text-align: center;
+    font-family: 'Futura PT', sans-serif;
+    font-size: 1.5vw;
+    border: 2.5px solid grey;
+}
+
+
+.submitButton {
+    font-family: 'Futura PT', sans-serif;
+    border-radius: 0.7vw;
+    margin-top: 2vw;
+    height: 2.5vw;
+    margin-inline: auto;
+    text-align: center;
+    display: block;
+    border: none;
+    width: 10vw;
+    font-size: 1.5vw;
+    background-color: #AF6B58;
+    color: white;
+    cursor: pointer;
+}
+
+.submitButton:hover {
+    color: black;
+    background-color: whitesmoke;
+}
+
+.divider {
+    margin-inline: auto;
+    margin-top: 2vw;
+    width: 15vw;
+    height: 2px;
+    background-color: grey;
+}
+
+#changingButton {
+    transform: translateY(5vh);
+    cursor: pointer;
+}

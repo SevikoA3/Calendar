@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tense-fi</title>
+    <link href="index.css" rel="stylesheet">
+    <script defer src="index.js"></script>
+</head>
+<body>
+    <section class="login-page">
+        <div class="login-container">
+            <div class="sub-page" id="register">
+                <p class="sub-header">Register Page</p>
+                <form action="register.php">
+                    <input class="uname" type="text" name="username" placeholder="Username" required>
+                    <input class="pass" type="password" name="password" placeholder="Password" required>
+                    <hr class="divider">
+                    <input class="submitButton" type="button" value="register" >         
+                </form>
+                <a onclick="slide()" id="changingButton"><u>Login</u></a>        
+            </div>
+            <div class="sub-page" id="center">
+                <p id="greetings">Welcome!</p>
+                <p id="quote">With Tense-Fi, productivity becomes a necessity.</p>
+            </div>
+            <div class="sub-page" id="login">
+                <p class="sub-header">Login Page</p>
+                <form action="login.php">
+                    <input class="uname" type="text" name="username" placeholder="Username" required>
+                    <input class="pass" type="password" name="password" placeholder="Password" required>
+                    <hr class="divider">
+                    <input class="submitButton" type="button" value="login" >
+                </form>
+                <a onclick="slide()" id="changingButton"><u>Register</u></a>
+            </div>
+        </div>
+    </section>
+    
+</body>
+</html>
