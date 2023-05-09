@@ -19,6 +19,7 @@ body{
     border-radius: 2vw;
     background-image: url("assets/background.svg");
     background-size: cover;
+    background-position: center -5vw;
     /* overflow-x: hidden; */
     display: flex;
 }
