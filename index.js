@@ -16,7 +16,7 @@ function slide() {
         subPage[1].style.transform = "translateX(42.86%)"
         subPage[2].style.transform = "translateX(100%)"
         quote.innerHTML = "You are welcomed to start your daily journey with Tense-Fi."
-        quote.style.fontSize = "1.6rem"
+        quote.style.fontSize = "1.5rem"
         change = true
     }
 }
