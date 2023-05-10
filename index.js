@@ -3,7 +3,7 @@ const subPage = document.querySelectorAll(".sub-page")
 let change = true
 
 function slide() {
-    if (counter){
+    if (change){
         subPage[0].style.transform = "translateX(-100%)"
         subPage[1].style.transform = "translateX(0%)"
         subPage[2].style.transform = "translateX(0%)"
