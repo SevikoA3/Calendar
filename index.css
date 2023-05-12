@@ -88,7 +88,7 @@ body{
 
 .sub-header {
     font-weight: 500;
-    font-size: 3vw;
+    font-size: 3rem;
     padding-bottom: 5vh;
 }
 
@@ -129,7 +129,7 @@ body{
     display: block;
     border: none;
     width: 10vw;
-    font-size: 1.5vw;
+    font-size: 1.5rem;
     background-color: #AF6B58;
     color: white;
     cursor: pointer;
