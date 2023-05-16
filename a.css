@@ -138,6 +138,7 @@ body{
     background-repeat: no-repeat;
     background-position: bottom;
     transition: background-size .3s;
+    text-decoration: none;
 }
 
 .error{

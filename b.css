@@ -1,0 +1,26 @@
+@import url('https://fonts.cdnfonts.com/css/futura-pt');
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Futura PT', sans-serif;
+}
+
+.navbar {
+    height: 100vh;
+    display: flex;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(48,40,184,1);
+    width: 5vw;
+}
+
+.navbarList {
+    list-style-type: none;
+}
+
+.navbarList a {
+    color: white;
+    text-decoration: none;
+}
