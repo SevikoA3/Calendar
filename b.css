@@ -6,6 +6,10 @@
     font-family: 'Futura PT', sans-serif;
 }
 
+body {
+    flex-direction: column;
+}
+
 .navbar {
     height: 100vh;
     display: flex;
@@ -13,14 +17,43 @@
     align-items: center;
     justify-content: center;
     background-color: rgba(48,40,184,1);
-    width: 5vw;
+    width: 6vw;
 }
 
 .navbarList {
     list-style-type: none;
+    width: 70%;
 }
 
 .navbarList a {
     color: white;
     text-decoration: none;
+}
+
+.homeButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("assets/home.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 8.1%;
+    margin-bottom: 80%;
+}
+
+.todoListButton {
+    background-image: url("assets/todo.svg");
+    background-size: contain;
+    display: flex;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 8.1%;
+}
+
+.main {
+    display: flex;
+    background-color: red;
+    width: 94vw;
+    height: 100vh;
 }
