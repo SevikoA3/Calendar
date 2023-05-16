@@ -51,11 +51,9 @@ body{
 }
 
 #quote {
-    /* padding-top: 5vh; */
     font-size: 2rem;
     font-weight: 100;
     letter-spacing: 0.3vw;
-    /* max-width: 90%; */
     padding: 5%;
 }
 
@@ -66,7 +64,6 @@ body{
     transition: ease-out 1s;
     display: flex;
     flex-direction: column;
-    /* justify-content: center; */
     padding-top:20vh;
     align-items: center;
 }
@@ -74,7 +71,7 @@ body{
 .sub-header {
     font-weight: 500;
     font-size: 3rem;
-    padding-bottom: 5vh;
+    padding-bottom: 2vh;
 }
 
 .uname {
@@ -141,6 +138,20 @@ body{
     background-repeat: no-repeat;
     background-position: bottom;
     transition: background-size .3s;
+}
+
+.error{
+    font-weight: 200;
+    font-size: 1.4vw;
+    color : red;
+    text-align: center;
+}
+
+.success{
+    font-weight: 200;
+    font-size: 1.4vw;
+    color : green;
+    text-align: center;
 }
 
 #changingButton:hover {
