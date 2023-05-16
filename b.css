@@ -68,16 +68,56 @@
 
 .todoList {
     display: flex;
+    justify-content: center;
+    align-items: center;
     border-radius: 30px;
     background-color: #CBBCB1;
     height: 100%;
     width: 59%;
 }
-.todoListName {
+
+.todoList p {
+    color: white;
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+.list {
     display: flex;
+    flex-direction: column;
     border-radius: 30px;
     height: 100%;
     width: 40%;
-    background-color: #CBBCB1;
     margin-left: 1%;
+}
+
+.todoListName {
+    background-color: #CBBCB1;
+    border-radius: 30px;
+    justify-content: center;
+    width: 100%;
+    height: 49.5%;
+    display: flex;
+}
+
+.todoListName p {
+    font-size: 1.8rem;
+    padding-top: 5%;
+    color: white;
+}
+
+.eventComing {
+    margin-top: 1%;
+    background-color: #CBBCB1;
+    border-radius: 30px;
+    justify-content: center;
+    width: 100%;
+    height: 49.5%;
+    display: flex;
+}
+
+.eventComing p {
+    font-size: 1.8rem;
+    padding-top: 5%;
+    color: white;
 }
