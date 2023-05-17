@@ -6,6 +6,10 @@
     font-family: 'Futura PT', sans-serif;
 }
 
+.material-symbols-outlined {
+    scale: 1.5;
+}
+
 .main-page {
     display: flex;
 }
@@ -21,7 +25,8 @@
     overflow-x: hidden;
 }
 
-.navbar:hover {
+/* hover */
+.navbar:hover{
     width: 15vw;
 }
 
@@ -37,16 +42,22 @@
     height: 30%;
     justify-content: center;
     text-align: center;
+    gap: 50px;
 }
 
 .navicon {
-    filter: invert();
+    text-decoration: none;
+}
+
+.navicon a {
+    color: white;
+    text-decoration: none;
     display: flex;
+    align-items: center;
     justify-content: center;
 }
 
 .navbarText {
-    padding-left: 0;
     font-size: 0;
     transition: 0.7s;
 }
@@ -56,18 +67,13 @@
 }
 
 .todoListButton {
-    padding-top: 50px;
     width: 2rem;
 }
 
+/* hover */
 .navbar:hover .navbarText {
     padding-left: 20px;
     font-size: 1.5rem;
-    cursor: default;
-}
-
-#text2 {
-    padding-top: 50px;
 }
 
 .right {
