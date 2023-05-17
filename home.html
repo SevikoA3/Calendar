@@ -1,4 +1,4 @@
-<html lang="en">
+<html lang="en" style="scroll-behavior: smooth;">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,12 +8,12 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 
 </head>
-<body>
-    <section class="main-page">
+<body style="overflow: hidden;">
+    <section id="main-page">
         <div class="navbar">
             <div class="navicons">
                 <div class="navicon">
-                    <a href="home.html">
+                    <a href="#main-page">
                         <span class="material-symbols-outlined">
                             home
                         </span>
@@ -21,7 +21,7 @@
                     </a>
                 </div>
                 <div class="navicon">
-                    <a href="todolist.html">
+                    <a href="#todoPage">
                         <span class="material-symbols-outlined scale-up">
                             checklist
                         </span>
@@ -33,11 +33,11 @@
         <div class="right">
             <div class="main">
                 <div class="todoList">
-                    <p>Click a to-do List for More Detail.</p>
+                    <p>Todo List Preview.</p>
                 </div>
                 <div class="list">
                     <div class="todoListName">
-                        <p>Your to-do List:</p>
+                        <p>Your Profile:</p>
                     </div>
                     <div class="eventComing">
                         <p>Event Coming:</p>
@@ -45,6 +45,8 @@
                 </div>
             </div>
         </div>
+    </section>
+    <section id="todoPage">
     </section>
 </body>
 </html>
