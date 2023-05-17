@@ -18,6 +18,7 @@
     background-color: #AF6B58;
     width: 4vw;
     transition: width 0.7s;
+    overflow-x: hidden;
 }
 
 .navbar:hover {
@@ -32,7 +33,7 @@
 .navicons {
     display: flex;
     flex-direction: column;
-    width: 4vw;
+    width: 15vw;
     height: 30%;
     justify-content: center;
     text-align: center;
@@ -40,15 +41,33 @@
 
 .navicon {
     filter: invert();
+    display: flex;
+    justify-content: center;
+}
+
+.navbarText {
+    padding-left: 0;
+    font-size: 0;
+    transition: 0.7s;
 }
 
 .homeButton {
-    width: 80%;
+    width: 2rem;
 }
 
 .todoListButton {
     padding-top: 50px;
-    width: 80%;
+    width: 2rem;
+}
+
+.navbar:hover .navbarText {
+    padding-left: 20px;
+    font-size: 1.5rem;
+    cursor: default;
+}
+
+#text2 {
+    padding-top: 50px;
 }
 
 .right {
