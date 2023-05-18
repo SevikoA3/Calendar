@@ -6,6 +6,7 @@
     <title>Tense-Fi</title>
     <link rel="stylesheet" href="b.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <script defer src="todo.js"></script>
 
 </head>
 <body style="overflow: hidden;">
@@ -28,6 +29,14 @@
                         <b class="navbarText" id="text2">To-do</b>
                     </a>
                 </div>
+                <div class="navicon">
+                    <a href="database/logout.php">
+                        <span class="fa-solid fa-door-open"></i>
+                            door
+                        </span>
+                        <b class="navbarText" id="text2">Logout</b>
+                    </a>
+                </div>
             </div>
         </div>
         <div class="right">
@@ -38,7 +47,7 @@
                 <div class="list">
                     <div class="todoListName">
                         <p>Your Profile:</p>
-                    </div>
+                    </div>      
                     <div class="eventComing">
                         <p>Event Coming:</p>
                     </div>
@@ -47,6 +56,22 @@
         </div>
     </section>
     <section id="todoPage">
+        <div id="todoTitles">
+            <h2>TO DO</h2>
+            <div id="todoContainer">
+                <div id="listContainer">
+                    <div class="todoTitle"></div>
+                </div>
+                <div class="plus">  
+                    <span class="material-symbols-outlined" onclick="addTodo()">
+                        add
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div id="todoDescrpition">
+            
+        </div>
     </section>
 </body>
 </html>
