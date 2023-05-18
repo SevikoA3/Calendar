@@ -1,12 +1,3 @@
-<?php 
-session_start();
-
-if(!isset($_SESSION["username"])){
-    header("Location:loginPage.php");
-    exit(); 
-}
-?>
-
 <html lang="en" style="scroll-behavior: smooth;">
 <head>
     <meta charset="UTF-8">
