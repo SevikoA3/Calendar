@@ -4,6 +4,7 @@
     margin: 0;
     padding: 0;
     font-family: 'Futura PT', sans-serif;
+    cursor: default;
 }
 
 .material-symbols-outlined {
@@ -158,6 +159,29 @@
 .pfp {
     border-radius: 50%;
     margin-left: 5%;
+}
+
+.user {
+    padding-left: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.username {
+    background-image: linear-gradient(90deg, #556052, #AF6B58);
+    background-repeat: no-repeat;
+    background-position: bottom left;
+    background-size: 0% 2px;
+    transition: background-size 0.5s;
+}
+
+.username:hover {
+    background-size: 100% 2px;
+}
+
+.user p {
+    font-size: 1.3rem;
 }
 
 .eventComing {
