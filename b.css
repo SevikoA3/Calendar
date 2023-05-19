@@ -155,7 +155,7 @@
     margin-left: auto;
     margin-right: 0;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
     background-color: #F2EFEA;
     width: 96vw;
@@ -178,6 +178,7 @@
     height: 80%;
     background-color: #CBBCB1;
     border-radius: 20px;
+    margin-left: 2vw;
 }
 
 #todoTitles{
@@ -225,7 +226,8 @@
     cursor: pointer;
 }
 
-/* textarea{
+textarea{
     padding: 50px;
     background-color: rgba(0, 0, 0, 0);
-} */
+    resize: none;
+}
