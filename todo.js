@@ -8,7 +8,11 @@ const title = document.querySelector("#txt1")
 
 function addTodo(){
    
-    div = document.createElement("div")
+    div = document.createElement("textarea")
+    div.cols = 1
+    div.rows = 1
+    div.placeholder = "title"
+    div.oninput = "input1()"
     div.classList.add("todoTitle")
     listCon.appendChild(div)
 }
