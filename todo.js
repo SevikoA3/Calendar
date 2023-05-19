@@ -2,19 +2,28 @@ const listCon = document.querySelector("#listContainer")
 let div
 let list = document.querySelectorAll(".todoTitle")
 const desc = document.querySelector("#todoDescrpition")
-let currentTodo
+let currentTodo = null
 const title = document.querySelector("#txt1")
 
+current()
 
 function addTodo(){
-   
     div = document.createElement("textarea")
     div.cols = 1
     div.rows = 1
     div.placeholder = "title"
-    div.oninput = "input1()"
+    div.addEventListener("input", function(){
+        title.value = currentTodo.value
+    })
+    // div.addEventListener("click", function(){
+    //     currentTodo = div
+    //     title.value = currentTodo.value
+    // })
     div.classList.add("todoTitle")
     listCon.appendChild(div)
+
+    list = document.querySelectorAll(".todoTitle")
+    current()
 }
 
 function input(){
@@ -34,8 +43,11 @@ function input2(){
     currentTodo.value = title.value
 }
 
-Array.from(list).forEach(title => {
-    title.addEventListener('click', function() {
-        currentTodo = title
+function current(){
+    Array.from(list).forEach(link => {
+        link.addEventListener('click', function() {
+            currentTodo = link
+            title.value = currentTodo.value
+        })
     })
-})
+}
