@@ -55,26 +55,32 @@
             </div>
         </div>
     </section>
-    <section id="todoPage">
-        <div id="todoTitles">
-            <h2>TO DO</h2>
-            <div id="todoContainer">
-                <div id="listContainer">
-                    <!-- <div class="todoTitle"></div> -->
-                </div>
-                <div class="plus" onclick="addTodo()">  
-                    <span class="material-symbols-outlined">
-                        add
-                    </span>
+
+
+    <form action="">
+        <section id="todoPage">
+            <div id="todoTitles">
+                <h2>TO DO</h2>
+                <div id="todoContainer">
+                    <div id="listContainer">
+
+                            <textarea name="todo1" class="todoTitle" cols="1" rows="1" placeholder="title" oninput="input1()"></textarea>
+                            <textarea name="todo2" class="todoTitle" cols="1" rows="1" placeholder="title" oninput="input1()"></textarea>
+
+                    </div>
+                    <div class="plus" onclick="addTodo()">  
+                        <span class="material-symbols-outlined">
+                            add
+                        </span>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div id="todoDescrpition">
-            <form action="">
-               <h2 class="title">SOME TITLE SHIT</h2>
-               <textarea name="" id="" cols="30" rows="10" placeholder="task" oninput="input()"></textarea>
-            </form>
-        </div>
-    </section>
+            <div id="todoDescrpition">
+               <textarea name="title" id="txt1" cols="1" rows="1" placeholder="title" oninput="input2()"></textarea>
+               
+               <textarea name="desc" id="txt2" cols="120" rows="20" placeholder="task" ></textarea>
+            </div>
+        </section>
+    </form>
 </body>
 </html>
