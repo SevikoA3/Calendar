@@ -2,8 +2,9 @@ const listCon = document.querySelector("#listContainer")
 let div
 let list = document.querySelectorAll(".todoTitle")
 const desc = document.querySelector("#todoDescrpition")
+let currentTodo
+const title = document.querySelector("#txt1")
 
-list.onclick = appear()
 
 function addTodo(){
    
@@ -20,3 +21,17 @@ function appear(){
     console.log("p")
     desc.style.marginLeft = "5vw"
 }
+
+function input1(){
+    title.value = currentTodo.value
+}
+
+function input2(){
+    currentTodo.value = title.value
+}
+
+Array.from(list).forEach(title => {
+    title.addEventListener('click', function() {
+        currentTodo = title
+    })
+})
