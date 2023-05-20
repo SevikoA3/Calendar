@@ -4,6 +4,7 @@
     margin: 0;
     padding: 0;
     font-family: 'Futura PT', sans-serif;
+    cursor: default;
 }
 
 .material-symbols-outlined {
@@ -153,20 +154,11 @@
     width: 100%;
     display: flex;
     border-radius: 50%;
-    position: relative;
 }
 
 .pfp {
     border-radius: 50%;
     margin-left: 5%;
-}
-
-.editpfp {
-    position: absolute;
-    bottom: 0;
-    left: 25%;
-    cursor: pointer;
-    color: gray;
 }
 
 .user {
@@ -298,7 +290,6 @@
     margin-bottom: 1vh;
     padding: 3px 20px;
     font-size: 1.6rem;
-    cursor: pointer;
 }
 
 .plus{
@@ -328,10 +319,3 @@ textarea{
     /* display : none; */
 }
 
-#txt3 {
-    width: 10%;
-    height: 5%;
-    border: 0;
-    cursor: pointer;
-    color: rgb(73, 37, 0);
-}

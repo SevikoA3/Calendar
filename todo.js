@@ -51,6 +51,8 @@ function current(){
     })
 }
 
-function changepfp() {
-    console.log(1);
+function txtappear(){
+    title.style.display = "inline-block";
+    isi.style.display = "inline-block";
+    submit.style.display = "inline-block";
 }

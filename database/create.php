@@ -1,19 +1,25 @@
 <?php
 
-$i = 1;
-
 session_start();
 
 include ("dbconnect.php");
 
-$i .= "";
-
 $usernameInput = $_SESSION['username'];
 
-$sqlCreate = "INSERT INTO tdl(username, id) VALUES('$usernameInput', '$i')";
+$counter = 1;
+while(true){
+    $result = mysqli_query($conn, "SELECT * FROM tdl WHERE username = '$usernameInput' AND id = '$counter'");
+    if(mysqli_num_rows($result) > 0){
+        $counter++;
+    }else{
+        $id = $counter;
+        break;
+    }
+}
+
+$sqlCreate = "INSERT INTO tdl(username, id) VALUES('$usernameInput', '$id')";
 
 if(mysqli_query($conn, $sqlCreate)){
-    $i++;
     header("Location:../todo.php");
 }
 
