@@ -298,6 +298,7 @@
     margin-bottom: 1vh;
     padding: 3px 20px;
     font-size: 1.6rem;
+    cursor: pointer;
 }
 
 .plus{

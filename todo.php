@@ -64,7 +64,7 @@ $i = 1;
                     while($row = mysqli_fetch_array($result)){
                         $title = $row['title'];
                     ?>
-                        <a href=todo.php?id=<?php echo $i;?>><textarea name='$i' class='todoTitle' cols='1' rows='1' placeholder='title' oninput='input1()' onclick='txtappear()'><?php echo $title ?></textarea></a>
+                        <a href=todo.php?id=<?php echo $i;?>><textarea readonly name='$i' class='todoTitle' cols='1' rows='1' placeholder='title' oninput='input1()' onclick='txtappear()'><?php echo $title ?></textarea></a>
                     <?php $i++;} ?>
                 </div>
                 <a href = "database/create.php">
