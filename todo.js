@@ -51,3 +51,7 @@ function current(){
         })
     })
 }
+
+function changepfp() {
+    console.log(1);
+}

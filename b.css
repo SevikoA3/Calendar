@@ -153,11 +153,20 @@
     width: 100%;
     display: flex;
     border-radius: 50%;
+    position: relative;
 }
 
 .pfp {
     border-radius: 50%;
     margin-left: 5%;
+}
+
+.editpfp {
+    position: absolute;
+    bottom: 0;
+    left: 25%;
+    cursor: pointer;
+    color: gray;
 }
 
 .user {
