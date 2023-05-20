@@ -86,7 +86,7 @@ $i = 1;
                 ?>
             <textarea name='title' id='txt1' cols='1' rows='1' placeholder='title' oninput='input2()'><?php echo $rowData['title'] ?></textarea>
             <textarea name='isi' id='txt2' cols='120' rows='20' placeholder='task' ><?php echo $rowData['isi']?></textarea>
-            <input type = 'submit' value = 'enter' id = 'txt3'>
+            <input type = 'submit' value = 'Save' id = 'txt3'>
             <?php }?>
         </div>
     </section>

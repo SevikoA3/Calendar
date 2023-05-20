@@ -67,7 +67,7 @@ $result = mysqli_query($conn, $findData);
                                 photo_camera
                             </span>
                             <div class="user">
-                                <p>Welcome, <br> <b class="username"><?php echo $username ?></b></p>
+                                <p>Welcome, <br> <b class="username"><?php echo $username ?></b>.</p>
                                 <p>You have <b><?php echo mysqli_num_rows($result)?></b> task left to do!</p>
                             </div>
                         </div>

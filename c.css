@@ -327,3 +327,10 @@ textarea{
     /* display : none; */
 }
 
+#txt3 {
+    width: 10%;
+    height: 5%;
+    border: 0;
+    cursor: pointer;
+    color: rgb(73, 37, 0);
+}
