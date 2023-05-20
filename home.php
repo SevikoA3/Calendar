@@ -10,8 +10,6 @@ include("database/dbconnect.php");
 $username = $_SESSION["username"];
 $findData = "SELECT * FROM tdl WHERE username = '$username'";
 $result = mysqli_query($conn, $findData);
-$i = 1;
-
 ?>
 
 <html lang="en" style="scroll-behavior: smooth;">
@@ -30,7 +28,7 @@ $i = 1;
         <div class="navbar">
             <div class="navicons">
                 <div class="navicon">
-                    <a href="#main-page">
+                    <a href="home.php">
                         <span class="material-symbols-outlined">
                             home
                         </span>
@@ -38,7 +36,7 @@ $i = 1;
                     </a>
                 </div>
                 <div class="navicon">
-                    <a href="#todoPage">
+                    <a href="todo.php">
                         <span class="material-symbols-outlined scale-up">
                             checklist
                         </span>
@@ -78,44 +76,5 @@ $i = 1;
             </div>
         </div>
     </section>
-
-
-    <form action="database/edit.php" method="post">
-        <section id="todoPage">
-            <div id="todoTitles">
-                <h2>TO DO</h2>
-                <div id="todoContainer">
-                    <div id="listContainer">
-                        <?php 
-                        while($row = mysqli_fetch_array($result)){
-                            $title = $row["title"];
-                        ?>
-                            <?php echo "<a href ='home.php#todoPage?id=$i'> <textarea name='$i' class='todoTitle' cols='1' rows='1' placeholder='title' oninput='input1()' onclick='txtappear()'></textarea></a>" ?>
-                        <?php $i++;} ?>
-                    </div>
-                    <a href = "database/create.php">
-                        <div class="plus" onclick="addTodo()">  
-                            <span class="material-symbols-outlined">
-                                add
-                            </span>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <div id="todoDescrpition">
-                <?php 
-                if(isset($_GET["id"])){
-                    $id = $_GET["id"];
-                    $searchData = "SELECT * FROM tdl WHERE id = '$id' AND username = '$username'";
-                    $resultSearch = mysqli_query($conn,$searchData);
-                    $rowData = mysqli_fetch_assoc($resultSearch);  
-                    ?>
-                <textarea name='title' id='txt1' cols='1' rows='1' placeholder='title' oninput='input2()'><?php echo $rowData['title'] ?></textarea>
-                <textarea name='isi' id='txt2' cols='120' rows='20' placeholder='task' ><?php echo $rowData['isi']?></textarea>
-                <input type = 'submit' value = 'enter' id = 'txt3'>
-                <?php }?>
-            </div>
-        </section>
-    </form>
 </body>
 </html>
