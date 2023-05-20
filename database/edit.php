@@ -16,7 +16,7 @@ WHERE
 id = '$id' and username = '$usernameInput';";
 
 if(mysqli_query($conn, $sqlCreate)){
-    header("Location:../todoPage");
+    header("Location:../todo.php?id=$id");
 }else{
     echo "gagal";
 }
