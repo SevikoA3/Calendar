@@ -20,7 +20,9 @@
     }else{
         $row = mysqli_fetch_assoc($result);
         if($passwordInput == $row["password"]){
-            header("Location:../home.html");
+            session_start();
+            $_SESSION["username"] = $usernameInput;
+            header("Location:../home.php");
         }else{
             header("Location:../loginPage.php?errorLogin=Wrong Password");
         }

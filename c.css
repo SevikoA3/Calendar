@@ -231,7 +231,7 @@
 }
 
 #todoDescrpition{
-    width: 65%;
+    width: 60%;
     height: 80%;
     background-color: #CBBCB1;
     border-radius: 20px;
@@ -284,7 +284,7 @@
 
 #listContainer::-webkit-scrollbar-thumb {
     border-radius: 8px;
-    background-color: rgb(114, 110, 110);
+    background-color: rgb(54, 17, 17);
 }
 
 .todoTitle{
@@ -319,8 +319,11 @@ textarea{
 #txt1{
     width: 90%;
     font-size: 2rem;
+    /* display : none; */
 }
 
 #txt2{
     width: 90%;
+    /* display : none; */
 }
+

@@ -4,6 +4,8 @@ let list = document.querySelectorAll(".todoTitle")
 const desc = document.querySelector("#todoDescrpition")
 let currentTodo = null
 const title = document.querySelector("#txt1")
+const isi = document.querySelector("#txt2")
+const submit = document.querySelector("#txt3")
 
 current()
 
@@ -15,10 +17,7 @@ function addTodo(){
     div.addEventListener("input", function(){
         title.value = currentTodo.value
     })
-    // div.addEventListener("click", function(){
-    //     currentTodo = div
-    //     title.value = currentTodo.value
-    // })
+
     div.classList.add("todoTitle")
     listCon.appendChild(div)
 

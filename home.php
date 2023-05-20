@@ -1,10 +1,24 @@
+<?php 
+session_start();
+
+if(!isset($_SESSION["username"])){
+    header("Location:loginPage.php");
+    exit(); 
+}
+
+include("database/dbconnect.php");  
+$username = $_SESSION["username"];
+$findData = "SELECT * FROM tdl WHERE username = '$username'";
+$result = mysqli_query($conn, $findData);
+?>
+
 <html lang="en" style="scroll-behavior: smooth;">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tense-Fi</title>
-    <link rel="stylesheet" href="b.css">
+    <link rel="stylesheet" href="c.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <script defer src="todo.js"></script>
 
@@ -14,7 +28,7 @@
         <div class="navbar">
             <div class="navicons">
                 <div class="navicon">
-                    <a href="#main-page">
+                    <a href="home.php">
                         <span class="material-symbols-outlined">
                             home
                         </span>
@@ -22,7 +36,7 @@
                     </a>
                 </div>
                 <div class="navicon">
-                    <a href="#todoPage">
+                    <a href="todo.php">
                         <span class="material-symbols-outlined scale-up">
                             checklist
                         </span>
@@ -53,8 +67,8 @@
                                 photo_camera
                             </span>
                             <div class="user">
-                                <p>Welcome, <br> <b class="username">insert name!</b></p>
-                                <p>You have <b>X</b> left to do!</p>
+                                <p>Welcome, <br> <b class="username"><?php echo $username ?></b></p>
+                                <p>You have <b><?php echo mysqli_num_rows($result)?></b> task left to do!</p>
                             </div>
                         </div>
                     </div>      
@@ -65,32 +79,5 @@
             </div>
         </div>
     </section>
-
-
-    <form action="">
-        <section id="todoPage">
-            <div id="todoTitles">
-                <h2>TO DO</h2>
-                <div id="todoContainer">
-                    <div id="listContainer">
-
-                            <textarea name="todo1" class="todoTitle" cols="1" rows="1" placeholder="title" oninput="input1()"></textarea>
-                            <textarea name="todo2" class="todoTitle" cols="1" rows="1" placeholder="title" oninput="input1()"></textarea>
-
-                    </div>
-                    <div class="plus" onclick="addTodo()">  
-                        <span class="material-symbols-outlined">
-                            add
-                        </span>
-                    </div>
-                </div>
-            </div>
-            <div id="todoDescrpition">
-               <textarea name="title" id="txt1" cols="1" rows="1" placeholder="title" oninput="input2()"></textarea>
-               
-               <textarea name="desc" id="txt2" cols="120" rows="20" placeholder="task" ></textarea>
-            </div>
-        </section>
-    </form>
 </body>
 </html>
