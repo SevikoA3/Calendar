@@ -44,7 +44,7 @@ $result = mysqli_query($conn, $findData);
                     </a>
                 </div>
                 <div class="navicon">
-                    <a href="calendar.html">
+                    <a href="calendar.php">
                         <span class="material-symbols-outlined">
                             calendar_month
                         </span>

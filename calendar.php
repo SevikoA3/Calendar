@@ -1,3 +1,16 @@
+<?php 
+session_start();
+
+if(!isset($_SESSION["username"])){
+    header("Location:loginPage.php");
+    exit(); 
+}
+
+include("database/dbconnect.php");  
+$username = $_SESSION["username"];
+ 
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,102 +21,6 @@
     <link rel="stylesheet" href="b.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <script defer src="todo.js"></script>
-
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
-        *{
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        }
-        .wrapper{
-        width: 50vw;
-        background-color: #F2EFEA;
-        border-radius: 10px;
-        box-shadow: 0 15px 40px rgba(0,0,0,0.12);
-        }
-        .wrapper header{
-        display: flex;
-        align-items: center;
-        padding: 25px 30px 10px;
-        justify-content: space-between;
-        }
-        header .icons{
-        display: flex;
-        }
-        header .icons span{
-        height: 38px;
-        width: 38px;
-        margin: 0 1px;
-        cursor: pointer;
-        color: #878787;
-        text-align: center;
-        line-height: 38px;
-        font-size: 1.9rem;
-        user-select: none;
-        border-radius: 50%;
-        }
-        .icons span:last-child{
-        margin-right: -10px;
-        }
-        header .icons span:hover{
-        background: #f2f2f2;
-        }
-        header .current-date{
-        font-size: 1.5rem;
-        font-weight: 500;
-        }
-        .calendar{
-        padding: 20px;
-        }
-        .calendar ul{
-        display: flex;
-        flex-wrap: wrap;
-        list-style: none;
-        text-align: center;
-        }
-        .calendar .days{
-        margin-bottom: 20px;
-        }
-        .calendar li{
-        color: #333;
-        width: calc(100% / 7);
-        font-size: 1.2rem;
-        }
-        .calendar .weeks li{
-        font-weight: 500;
-        cursor: default;
-        }
-        .calendar .days li{
-        z-index: 1;
-        cursor: pointer;
-        position: relative;
-        margin-top: 40px;
-        }
-        .days li.inactive{
-        color: #aaa;
-        }
-        .days li.active{
-        color: #fff;
-        }
-        .days li::before{
-        position: absolute;
-        content: "";
-        left: 50%;
-        top: 50%;
-        height: 40px;
-        width: 40px;
-        z-index: -1;
-        border-radius: 50%;
-        transform: translate(-50%, -50%);
-        }
-        .days li.active::before{
-        background: #8812b6;
-        }
-        .days li:not(.active):hover::before{
-        background: #f2f2f2;
-        }
-    </style>
 </head>
 <body>
 
@@ -127,7 +44,7 @@
                     </a>
                 </div>
                 <div class="navicon">
-                    <a href="calendar.html">
+                    <a href="calendar.php">
                         <span class="material-symbols-outlined">
                             calendar_month
                         </span>
@@ -145,7 +62,31 @@
             </div>
         </div>
         <div class="right">
-
+            <?php if(isset($_GET["date"]) && isset($_GET["month"]) && isset($_GET["year"]) ){ 
+                $date = $_GET['date'];
+                $month = $_GET['month'];
+                $year = $_GET['year'];
+                $sqlFind = "SELECT * FROM calendar WHERE date = '$date' AND month = '$month' AND year = '$year' AND username = '$username';";
+                $findResult = mysqli_query($conn, $sqlFind);?>
+                <form class = "note" action="database/calendarEdit.php?date=<?php echo $date ?>&month=<?php echo $month ?>&year=<?php echo $year ?>" method="post">
+                    <a href = "calendar.php">
+                        <span class="material-symbols-outlined" id="note-close">
+                        close
+                        </span>
+                    </a>
+                    
+                    </a>
+                    <textarea class = "note-text" name="content"><?php echo mysqli_fetch_assoc($findResult)['content']?></textarea>
+                    <div class = "note-button">
+                        <input type="submit" value="enter">
+                    <a href="calendar.php">
+                        <span class="material-symbols-outlined" id="note-close">
+                            delete
+                        </span>
+                    </a>
+                    </div>
+                </form>
+            <?php }?>
             <div class="wrapper">
                 <header>
                   <p class="current-date"></p>
@@ -177,8 +118,10 @@
         prevNextIcon = document.querySelectorAll(".icons span");
         // getting new date, current year and month
         let date = new Date(),
+        currDate = date.getDate(),
         currYear = date.getFullYear(),
         currMonth = date.getMonth();
+
         // storing full name of all months in array
         const months = ["January", "February", "March", "April", "May", "June", "July",
                     "August", "September", "October", "November", "December"];
@@ -189,13 +132,13 @@
             lastDateofLastMonth = new Date(currYear, currMonth, 0).getDate(); // getting last date of previous month
             let liTag = "";
             for (let i = firstDayofMonth; i > 0; i--) { // creating li of previous month last days
-                liTag += `<li class="inactive">${lastDateofLastMonth - i + 1}</li>`;
+                liTag += `<li class="inactive" >${lastDateofLastMonth - i + 1}</li>`;
             }
             for (let i = 1; i <= lastDateofMonth; i++) { // creating li of all days of current month
                 // adding active class to li if the current day, month, and year matched
                 let isToday = i === date.getDate() && currMonth === new Date().getMonth() 
                             && currYear === new Date().getFullYear() ? "active" : "";
-                liTag += `<li class="${isToday}">${i}</li>`;
+                liTag += `<li class="${isToday}"><a href = "database/calendarCreate.php?date=${i}&month=${currMonth+1}&year=${currYear}">${i}</a></li>`;           
             }
             for (let i = lastDayofMonth; i < 6; i++) { // creating li of next month first days
                 liTag += `<li class="inactive">${i - lastDayofMonth + 1}</li>`
@@ -203,27 +146,22 @@
             currentDate.innerText = `${months[currMonth]} ${currYear}`; // passing current mon and yr as currentDate text
             daysTag.innerHTML = liTag;
         }
+        
         renderCalendar();
         prevNextIcon.forEach(icon => { // getting prev and next icons
             icon.addEventListener("click", () => { // adding click event on both icons
                 // if clicked icon is previous icon then decrement current month by 1 else increment it by 1
                 currMonth = icon.id === "prev" ? currMonth - 1 : currMonth + 1;
-                if(currMonth < 0 || currMonth > 11) { // if current month is less than 0 or greater than 11
-                    // creating a new date of current year & month and pass it as date value
+                if(currMonth < 0 || currMonth > 11){
                     date = new Date(currYear, currMonth, new Date().getDate());
                     currYear = date.getFullYear(); // updating current year with new date year
                     currMonth = date.getMonth(); // updating current month with new date month
-                } else {
+                } else{
                     date = new Date(); // pass the current date as date value
                 }
                 renderCalendar(); // calling renderCalendar function
             });
         });
-
-
-
-
-
     </script>
     
 </body>

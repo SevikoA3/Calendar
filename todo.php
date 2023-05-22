@@ -48,7 +48,7 @@ $_SESSION['counter'] = 1;
                     </a>
                 </div>
                 <div class="navicon">
-                    <a href="calendar.html">
+                    <a href="calendar.php">
                         <span class="material-symbols-outlined">
                             calendar_month
                         </span>
@@ -124,15 +124,14 @@ $_SESSION['counter'] = 1;
                     </script>";
                 }?>
 
-                    <script>
-                        let list2 =document.querySelectorAll(".todoTitle")
-                        const title2 =document.querySelector("#txt1")
+                <script>
+                    let list2 =document.querySelectorAll(".todoTitle")
+                    const title2 =document.querySelector("#txt1")
 
-                        function inputTitle(){
-                            list2[<?php echo $_GET["id"]?> - 1].value = title2.value
-                        }
-                    </script>
-
+                    function inputTitle(){
+                        list2[<?php echo $_GET["id"]?> - 1].value = title2.value
+                    }
+                </script>
         </div>
     </section>
 </form>
