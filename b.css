@@ -385,102 +385,121 @@ textarea{
 #txt1{
     width: 90%;
     font-size: 2rem;
+    cursor: text;
     /* display : none; */
 }
 
 #txt2{
     width: 90%;
     height: 60%;
+    font-size: 1.5rem;
     /* display : none; */
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
 .wrapper{
-width: 50vw;
-background-color: #F2EFEA;
-border-radius: 10px;
-box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+    width: 50vw;
+    background-color: #F2EFEA;
+    border-radius: 10px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.12);
 }
+
 .wrapper header{
-display: flex;
-align-items: center;
-padding: 25px 30px 10px;
-justify-content: space-between;
+    display: flex;
+    align-items: center;
+    padding: 25px 30px 10px;
+    justify-content: space-between;
 }
+
 header .icons{
-display: flex;
+    display: flex;
 }
+
 header .icons span{
-height: 38px;
-width: 38px;
-margin: 0 1px;
-cursor: pointer;
-color: #878787;
-text-align: center;
-line-height: 38px;
-font-size: 1.9rem;
-user-select: none;
-border-radius: 50%;
+    height: 38px;
+    width: 38px;
+    margin: 0 1px;
+    cursor: pointer;
+    color: #878787;
+    text-align: center;
+    line-height: 38px;
+    font-size: 1.9rem;
+    user-select: none;
+    border-radius: 50%;
 }
+
 .icons span:last-child{
-margin-right: -10px;
+    margin-right: -10px;
 }
+
 header .icons span:hover{
-background: #f2f2f2;
+    background: #f2f2f2;
 }
+
 header .current-date{
-font-size: 1.5rem;
-font-weight: 500;
+    font-size: 1.5rem;
+    font-weight: 500;
 }
+
 .calendar{
-padding: 20px;
+    padding: 20px;
 }
+
 .calendar ul{
-display: flex;
-flex-wrap: wrap;
-list-style: none;
-text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    text-align: center;
 }
+
 .calendar .days{
-margin-bottom: 20px;
+    margin-bottom: 20px;
 }
+
 .calendar li{
-color: #333;
-width: calc(100% / 7);
-font-size: 1.2rem;
+    color: #333;
+    width: calc(100% / 7);
+    font-size: 1.2rem;
 }
+
 .calendar .weeks li{
-font-weight: 500;
-cursor: default;
+    font-weight: 500;
+    cursor: default;
 }
+
 .calendar .days li{
-z-index: 1;
-cursor: pointer;
-position: relative;
-margin-top: 40px;
+    z-index: 1;
+    cursor: pointer;
+    position: relative;
+    margin-top: 40px;
 }
+
 .days li.inactive{
-color: #aaa;
+    color: #aaa;
 }
+
 .days li.active{
-color: #fff;
+    color: #fff;
 }
+
 .days li::before{
-position: absolute;
-content: "";
-left: 50%;
-top: 50%;
-height: 40px;
-width: 40px;
-z-index: -1;
-border-radius: 50%;
-transform: translate(-50%, -50%);
+    position: absolute;
+    content: "";
+    left: 50%;
+    top: 50%;
+    height: 40px;
+    width: 40px;
+    z-index: -1;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
 }
+
 .days li.active::before{
-background: #8812b6;
+    background: #8812b6;
 }
+
 .days li:not(.active):hover::before{
-background: #f2f2f2;
+    background: #f2f2f2;
 }
 
 .note{
