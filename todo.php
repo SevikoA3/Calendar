@@ -28,7 +28,7 @@ $_SESSION['counter'] = 1;
 
 
 <form id="testForm" action="database/edit.php?id=<?php if(isset($_GET["id"]))echo $_GET['id']?>" method="post">
-<section id="main-page">
+    <section id="main-page">
         <div class="navbar navbarAppear">
             <div class="navicons">
                 <div class="navicon">
@@ -106,10 +106,16 @@ $_SESSION['counter'] = 1;
                     $rowData = mysqli_fetch_assoc($resultSearch);  
                     ?>
                     <div id="todoDescription">
-                    <textarea name='title' id='txt1' cols='1' rows='1' placeholder='title' oninput='inputTitle()'><?php echo $rowData['title'] ?></textarea>
-                    <textarea name='isi' id='txt2' cols='120' rows='20' placeholder='task' ><?php echo $rowData['isi']?></textarea>
-                    <input type = 'submit' value = 'enter' id = 'txt3'>
-                    <a href = "database/delete.php?id=<?php echo $id;?>">delete</a>
+                        <textarea name='title' id='txt1' cols='1' rows='1' placeholder='title' oninput='inputTitle()'><?php echo $rowData['title'] ?></textarea>
+                        <textarea name='isi' id='txt2' cols='120' rows='20' placeholder='task' ><?php echo $rowData['isi']?></textarea>
+                        <div class="inputForm">
+                            <input type = 'submit' value = 'Submit' id = 'txt3'>
+                            <a href = "database/delete.php?id=<?php echo $id;?>">
+                                <span class="material-symbols-outlined">
+                                    delete
+                                </span>
+                            </a>
+                        </div> 
                     </div>
                 <?php }
                 else{
@@ -121,7 +127,7 @@ $_SESSION['counter'] = 1;
                     <script>
                         let list2 =document.querySelectorAll(".todoTitle")
                         const title2 =document.querySelector("#txt1")
- 
+
                         function inputTitle(){
                             list2[<?php echo $_GET["id"]?> - 1].value = title2.value
                         }
