@@ -1,9 +1,7 @@
 <?php
 
 session_start();
-
 include ("dbconnect.php");
-
 $username = $_SESSION["username"];
 $id = $_GET["id"];
 $counter = 0;
