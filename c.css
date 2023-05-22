@@ -234,11 +234,6 @@
     flex-direction: column;
 }
 
-.inputForm {
-    display: flex;
-    align-items: center;
-}
-
 #todoTitles{
     display: flex;
     flex-direction: column;

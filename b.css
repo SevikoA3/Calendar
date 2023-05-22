@@ -249,6 +249,29 @@
     border-radius: 20px;
 }
 
+.inputForm {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+}
+
+.inputForm input {
+    width: 5vw;
+    height: 5vh;
+    background-color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 30px;
+    font-weight: 700;
+    color: #556052;
+}
+
+.inputForm a span {
+    color: #556052;
+    cursor: pointer;
+} 
+
 #todoDescription{
     width: 60%;
     height: 80%;
@@ -326,6 +349,11 @@
     cursor: pointer;
 }
 
+.plus span {
+    color: white;
+    cursor: pointer;
+}
+
 textarea{
     padding: 20px;
     background-color: #ede5df;
@@ -343,6 +371,7 @@ textarea{
 
 #txt2{
     width: 90%;
+    height: 60%;
     /* display : none; */
 }
 

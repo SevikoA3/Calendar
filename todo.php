@@ -84,7 +84,7 @@ $_SESSION['counter'] = 1;
                             }
                             $title = $row['title'];
                         ?>
-                            <a><textarea name='<?php $i?>' class='todoTitle' cols='1' rows='1' placeholder='title' onclick='delay("todo.php?id=<?php echo $i;?>")'><?php echo $title ?></textarea></a>
+                            <a><textarea readonly name='<?php $i?>' class='todoTitle' cols='1' rows='1' placeholder='title' onclick='delay("todo.php?id=<?php echo $i;?>")'><?php echo $title ?></textarea></a>
                         <?php 
                     } ?>
                     </div>
