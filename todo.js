@@ -1,58 +1,54 @@
 const listCon = document.querySelector("#listContainer")
 let div
 let list = document.querySelectorAll(".todoTitle")
-const desc = document.querySelector("#todoDescrpition")
+const desc = document.querySelector("#todoDescription")
 let currentTodo = null
 const title = document.querySelector("#txt1")
 const isi = document.querySelector("#txt2")
 const submit = document.querySelector("#txt3")
+const form = document.querySelector("#testForm")
 
-current()
+const navbar = document.querySelector(".navbar")
+const navbarText = document.querySelectorAll(".navbarText")
 
-function addTodo(){
-    div = document.createElement("textarea")
-    div.cols = 1
-    div.rows = 1
-    div.placeholder = "title"
-    div.addEventListener("input", function(){
-        title.value = currentTodo.value
-    })
 
-    div.classList.add("todoTitle")
-    listCon.appendChild(div)
 
-    list = document.querySelectorAll(".todoTitle")
-    current()
-}
+navbar.classList.remove("navbarAppear")
+navbarText.forEach(text => text.classList.remove("navbarTextAppear"))
 
-function input(){
-    console.log("l")
-}
+const timeout = setTimeout(() => {
+    navbar.classList.remove("navbarAppear")
+    navbarText.forEach(text => text.classList.remove("navbarTextAppear"))
+    console.log("P")
+}, 100)
 
-function appear(){
-    console.log("p")
-    desc.style.marginLeft = "5vw"
-}
+// let temp = title.value
+// title.value =""
 
-function input1(){
-    title.value = currentTodo.value
-}
+// const test = setTimeout(()=> {title.value = temp}, 0)
 
-function input2(){
-    currentTodo.value = title.value
-}
 
-function current(){
-    Array.from(list).forEach(link => {
-        link.addEventListener('click', function() {
-            currentTodo = link
-            title.value = currentTodo.value
-        })
-    })
-}
 
-function txtappear(){
-    title.style.display = "inline-block";
-    isi.style.display = "inline-block";
-    submit.style.display = "inline-block";
+
+
+//----------------------------------------------------------------
+
+// function appear(){
+//     console.log("p")
+//     desc.style.marginLeft = "5vw"
+// }
+
+//----------------------------------------------------------------
+
+
+// function txtappear(){
+//     title.style.display = "inline-block";
+//     isi.style.display = "inline-block";
+//     submit.style.display = "inline-block";
+// }
+
+
+function delay (URL) {
+    setTimeout( function() { window.location = URL }, 500 );
+    console.log("P")
 }

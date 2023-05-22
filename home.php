@@ -18,21 +18,21 @@ $result = mysqli_query($conn, $findData);
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tense-Fi</title>
-    <link rel="stylesheet" href="c.css">
+    <link rel="stylesheet" href="b.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <script defer src="todo.js"></script>
 
 </head>
 <body style="overflow: hidden;">
     <section id="main-page">
-        <div class="navbar">
+        <div class="navbar navbarAppear" >
             <div class="navicons">
                 <div class="navicon">
                     <a href="home.php">
                         <span class="material-symbols-outlined">
                             home
                         </span>
-                        <b class="navbarText" id="text1">Home</b>
+                        <b class="navbarText navbarTextAppear" id="text1">Home</b>
                     </a>
                 </div>
                 <div class="navicon">
@@ -40,7 +40,15 @@ $result = mysqli_query($conn, $findData);
                         <span class="material-symbols-outlined scale-up">
                             checklist
                         </span>
-                        <b class="navbarText" id="text2">To-do</b>
+                        <b class="navbarText navbarTextAppear" id="text2">To-do</b>
+                    </a>
+                </div>
+                <div class="navicon">
+                    <a href="calendar.html">
+                        <span class="material-symbols-outlined">
+                            calendar_month
+                        </span>
+                        <b class="navbarText navbarTextAppear" id="text2">Calendar</b>
                     </a>
                 </div>
                 <div class="navicon">
@@ -48,7 +56,7 @@ $result = mysqli_query($conn, $findData);
                         <span class="material-symbols-outlined">
                             door_open
                         </span>
-                        <b class="navbarText" id="text2">Logout</b>
+                        <b class="navbarText navbarTextAppear" id="text2">Logout</b>
                     </a>
                 </div>
             </div>
@@ -56,7 +64,26 @@ $result = mysqli_query($conn, $findData);
         <div class="right">
             <div class="main">
                 <div class="todoList">
-                    <p>Todo List Preview.</p>
+                    <div id="todoPreview">
+                        <div id="listContainer">
+                            <?php $i; $counter = 1;
+                            while($row = mysqli_fetch_assoc($result)){
+                                while(true){
+                                    $resultlain = mysqli_query($conn, "SELECT * FROM tdl WHERE username = '$username' AND id = '$counter'");
+                                    if(mysqli_num_rows($resultlain) > 0){
+                                        $i = $counter;
+                                        $counter++;
+                                        break;
+                                    }else{
+                                        $counter++;
+                                    }
+                                }
+                                $title = $row['title'];
+                            ?>
+                                <a href=todo.php?id=<?php echo $i;?>><textarea name='<?php $i?>' class='todoTitle' cols='1' rows='1' placeholder='title' oninput='input1()' onclick='txtappear()'><?php echo $title ?></textarea></a>
+                            <?php } ?>
+                        </div>
+                    </div>
                 </div>
                 <div class="list">
                     <div class="userProfile">
