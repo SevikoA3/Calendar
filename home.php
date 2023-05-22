@@ -80,7 +80,7 @@ $result = mysqli_query($conn, $findData);
                                 }
                                 $title = $row['title'];
                             ?>
-                                <a href=todo.php?id=<?php echo $i;?>><textarea name='<?php $i?>' class='todoTitle' cols='1' rows='1' placeholder='title' oninput='input1()' onclick='txtappear()'><?php echo $title ?></textarea></a>
+                                <a href=todo.php?id=<?php echo $i;?>><textarea readonly name='<?php $i?>' class='todoTitle' cols='1' rows='1' placeholder='title' oninput='input1()' onclick='txtappear()'><?php echo $title ?></textarea></a>
                             <?php } ?>
                         </div>
                     </div>

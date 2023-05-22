@@ -110,11 +110,11 @@ $_SESSION['counter'] = 1;
                         <textarea name='isi' id='txt2' cols='120' rows='20' placeholder='task' ><?php echo $rowData['isi']?></textarea>
                         <div class="inputForm">
                             <input type = 'submit' value = 'Submit' id = 'txt3'>
-                            <a href = "database/delete.php?id=<?php echo $id;?>">
-                                <span class="material-symbols-outlined">
-                                    delete
-                                </span>
-                            </a>
+                            <div class="deleteButton">
+                                <a href = "database/delete.php?id=<?php echo $id;?>">
+                                    Delete
+                                </a>
+                            </div>
                         </div> 
                     </div>
                 <?php }

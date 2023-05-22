@@ -33,7 +33,6 @@
     width: 13vw;
 }
 
-/* hover */
 .navbar:hover {
     width: 13vw; 
 }
@@ -56,6 +55,7 @@
 .navicon {
     text-decoration: none;
     transition: 0.5s;
+    padding-left: 25%;
     opacity: 0.5;
 }
 
@@ -64,7 +64,11 @@
     text-decoration: none;
     display: flex;
     align-items: center;
-    justify-content: center;
+    /* justify-content: center; */
+}
+
+.navbar:hover .navicon {
+    padding-left: 15%;
 }
 
 .navicon:hover {
@@ -238,10 +242,6 @@
     height: 100vh;
 }
 
-.navbar:hover #todoPage {
-    width: 88vw;
-}
-
 #todoTitles{
     width: 25%;
     height: 80%;
@@ -254,22 +254,40 @@
     align-items: center;
     justify-content: center;
     gap: 50px;
+    width: 100%;
 }
 
-.inputForm input {
-    width: 5vw;
+#txt3 {
+    width: 10vw;
     height: 5vh;
     background-color: white;
     border: none;
     cursor: pointer;
     border-radius: 30px;
     font-weight: 700;
+    font-size: 1rem;
     color: #556052;
 }
 
-.inputForm a span {
+.deleteButton {
+    background-color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 30px;
+    font-weight: 700;
+    font-size: 1rem;
+    color: #556052;
+}
+
+.deleteButton a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
     color: #556052;
     cursor: pointer;
+    width: 10vw;
+    height: 5vh;
 } 
 
 #todoDescription{
@@ -341,6 +359,7 @@
     margin-bottom: 1vh;
     padding: 3px 20px;
     font-size: 1.6rem;
+    cursor: pointer;
 }
 
 .plus{
@@ -377,12 +396,6 @@ textarea{
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
-*{
-margin: 0;
-padding: 0;
-box-sizing: border-box;
-text-decoration: none;
-}
 .wrapper{
 width: 50vw;
 background-color: #F2EFEA;
