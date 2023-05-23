@@ -531,19 +531,37 @@ li a{
 
 .note-text{
     width: 90%;
-    height: 75%;
+    height: 80%;
     background-color: rgba(255, 255, 255, 0.5);
+    padding: 0;
+    font-size: 1.2rem;
+    color: wheat;
 }
 
 .note-button{
-    width:100%;
-    height:15%;
-    display:flex;
-    justify-content: space-between;
+    display: flex;
     align-items: center;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
 
 }
-
 .exist{
     color:blue;
+}
+
+.a{
+    width: 7vw;
+    height: 3.5vh;
+    background-color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 30px;
+    font-weight: 700;
+    font-size: 1rem;
+    color: #556052;
+    display : flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
 }
