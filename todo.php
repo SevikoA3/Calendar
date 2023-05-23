@@ -22,13 +22,31 @@ $_SESSION['counter'] = 1;
     <title>Tense-Fi</title>
     <link rel="stylesheet" href="c.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-        <script defer src="todo.js"></script>
+    <script defer src="todo.js"></script>
+    <script defer>
+        function appear(){
+            setTimeout(() => {
+                document.querySelector("#todoDescription").classList.add('todoDescAppear')  
+                document.querySelector("#todoTitles").style.transition = "1s"
+                document.querySelector("#todoTitles").classList.add('titleShrink')
+            }, 0)
 
+        }
+
+        function stay(){
+            setTimeout(() => {
+            document.querySelector("#todoTitles").classList.add('titleShrink')
+            console.log(document.querySelector("#todoDescription"))
+            }, 0)
+        }
+
+    </script>
+    
 </head>
 
 
 <form id="testForm" action="database/edit.php?id=<?php if(isset($_GET["id"]))echo $_GET['id']?>" method="post">
-    <section id="main-page">
+<section id="main-page">
         <div class="navbar navbarAppear">
             <div class="navicons">
                 <div class="navicon">
@@ -84,7 +102,7 @@ $_SESSION['counter'] = 1;
                             }
                             $title = $row['title'];
                         ?>
-                            <a><textarea readonly name='<?php $i?>' class='todoTitle' cols='1' rows='1' placeholder='title' onclick='delay("todo.php?id=<?php echo $i;?>")'><?php echo $title ?></textarea></a>
+                            <a href="todo.php?id=<?php echo $i;?>"><textarea readonly name='<?php $i?>' class='todoTitle' cols='1' rows='1' placeholder='title'><?php echo $title ?></textarea></a>
                         <?php 
                     } ?>
                     </div>
@@ -103,12 +121,33 @@ $_SESSION['counter'] = 1;
                     $id = $_GET["id"];
                     $searchData = "SELECT * FROM tdl WHERE id = '$id' AND username = '$username'";
                     $resultSearch = mysqli_query($conn,$searchData);
-                    $rowData = mysqli_fetch_assoc($resultSearch);  
-                    ?>
+                    $rowData = mysqli_fetch_assoc($resultSearch); 
+
+                    $test = $_SERVER["HTTP_HOST"];
+                    $p = $_SERVER['HTTP_REFERER'];
+                    $stayed = false;
+
+                    
+                    
+                    if($_SERVER['HTTP_REFERER'] == "http://$test/todo.php"){
+                        echo "<script>appear()</script>";
+                        echo "<style>.navbarAppear{width:4vw !important;} .navbarTextAppear {padding-left: 0 !important; font-size: 0 !important;}</style>";
+                    }
+                    else if($_SERVER['HTTP_REFERER'] == "http://$test/home.php" || $_SERVER['HTTP_REFERER'] == "http://$test/calendar.php"){
+                        //blank
+                    }
+                    else{
+                        echo "<script>stay()</script>"; 
+                        echo "<style>#todoDescription{width:60% !important;margin-left:2vw !important; transition:0 !important;} #todoTitles{width: 25% !important;}</style>";
+                        echo "<style>.navbarAppear{width:4vw !important;} .navbarTextAppear {padding-left: 0 !important; font-size: 0 !important;}</style>";
+                    }
+                    
+                    
+                ?>
                     <div id="todoDescription">
-                        <textarea name='title' id='txt1' cols='1' rows='1' placeholder='title' oninput='inputTitle()'><?php echo $rowData['title'] ?></textarea>
-                        <textarea name='isi' id='txt2' cols='120' rows='20' placeholder='task' ><?php echo $rowData['isi']?></textarea>
-                        <div class="inputForm">
+                    <textarea name='title' id='txt1' cols='1' rows='1' placeholder='title' oninput='inputTitle()'><?php echo $rowData['title'] ?></textarea>
+                    <textarea name='isi' id='txt2' cols='120' rows='20' placeholder='task' ><?php echo $rowData['isi']?></textarea>
+                    <div class="inputForm">
                             <input type = 'submit' value = 'Submit' id = 'txt3'>
                             <div class="deleteButton">
                                 <a href = "database/delete.php?id=<?php echo $id;?>">
@@ -117,21 +156,16 @@ $_SESSION['counter'] = 1;
                             </div>
                         </div> 
                     </div>
-                <?php }
-                else{
-                    echo "<script>
-                        document.querySelector('#todoTitles').style.width = '50vw'    
-                    </script>";
-                }?>
+                    <?php }?>
 
-                <script>
-                    let list2 =document.querySelectorAll(".todoTitle")
-                    const title2 =document.querySelector("#txt1")
+                    <script>  
+                        let list2 =document.querySelectorAll(".todoTitle")
+                        const title2 =document.querySelector("#txt1")
 
-                    function inputTitle(){
-                        list2[<?php echo $_GET["id"]?> - 1].value = title2.value
-                    }
-                </script>
+                        function inputTitle(){
+                            list2[<?php echo $_GET["id"]?> - 1].value = title2.value
+                        }
+                    </script>
         </div>
     </section>
 </form>
