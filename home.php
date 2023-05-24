@@ -8,8 +8,11 @@ if(!isset($_SESSION["username"])){
 
 include("database/dbconnect.php");  
 $username = $_SESSION["username"];
-$findData = "SELECT * FROM tdl WHERE username = '$username'";
+$findData = "SELECT * FROM tdl WHERE username = '$username';";
 $result = mysqli_query($conn, $findData);
+
+$dataCalendar = "SELECT * FROM calendar WHERE username = '$username';";
+$resultCalendar = mysqli_query($conn, $dataCalendar);
 ?>
 
 <html lang="en" style="scroll-behavior: smooth;">
@@ -97,7 +100,18 @@ $result = mysqli_query($conn, $findData);
                         </div>
                     </div>      
                     <div class="eventComing">
-                        <p>Event Coming:</p>
+                        <div class = "calendar-container">
+                            <?php 
+                            while($row = mysqli_fetch_assoc($resultCalendar)){ 
+                                $desc = $row['content'];
+                                if(strlen($desc) > 10){
+                                    $desc = substr($desc, 0, 15) . "...";
+                                }
+                                ?>
+                                <a href=calendar.php class = "link-calendar"><textarea readonly class='calendarTitle' cols='34' rows='1' placeholder='title' oninput='input1()' onclick='txtappear()'><?php echo $row['date']; echo '/'; echo $row['month']; echo '/'; echo $row['year']; echo "     "; echo $desc ?></textarea></a>
+                            <?php }
+                            ?>
+                        </div>
                     </div>
                 </div>
             </div>
